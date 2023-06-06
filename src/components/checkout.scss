@@ -1,0 +1,147 @@
+.checkout__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media screen and (max-width: 1260px) {
+        margin-top: 50px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .checkout__payment-method {
+        margin: 30px 0;
+        .input__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 10px;
+            .radio-item {
+                display: flex;
+                align-items: center;
+                position: relative;
+                input[type='radio'] {
+                    display: none;
+                    &:checked + label::after {
+                        content: ' ';
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 17px;
+                        left: 5px;
+                        display: block;
+                        background: #59339d;
+                    }
+                }
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    position: relative;
+                    &::before {
+                        content: ' ';
+                        display: inline-block;
+                        position: relative;
+                        top: 0px;
+                        margin: 0 5px 0 0;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        border: 2px solid #59339d;
+                        background-color: transparent;
+                    }
+                    .card {
+                        color: #59339d;
+                        font-size: 33px;
+                        z-index: 999;
+                    }
+                    .card2 {
+                        position: absolute;
+                        transform: rotate(-45deg);
+                        left: 32px;
+                        bottom: 10px;
+                        z-index: -10;
+                        color: #59339d;
+                        font-size: 30px;
+                    }
+                    .paypal {
+                        color: blue;
+                        font-size: 33px;
+                    }
+                }
+            }
+        }
+    }
+
+    .checkout__payment-details {
+        .details__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 20px;
+            input {
+                width: 100%;
+                padding: 5px 0;
+                border: none;
+                border-bottom: 1px solid gray;
+                outline: none;
+            }
+            .card__number {
+                display: flex;
+            }
+            .card__exp {
+                display: flex;
+                gap: 50px;
+            }
+        }
+    }
+
+    .checkout__confirm {
+        width: 310px;
+        font-size: 14px;
+        margin: 30px 0;
+        color: gray;
+    }
+
+    .checkout__buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            border: none;
+            font-weight: 600;
+            letter-spacing: 0.04rem;
+            transition: 0.5s all;
+            &:hover {
+                opacity: 0.8;
+            }
+            &:first-child {
+                background: white;
+                width: 200px;
+                color: #59339d;
+                border: 1px solid #59339d;
+                @media screen and (max-width: 767px) {
+                    width: 150px;
+                }
+            }
+            &:last-child {
+                background: #59339d;
+                color: white;
+                width: 450px;
+                border: 1px solid #59339d;
+                @media screen and (max-width: 767px) {
+                    width: 100%;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
